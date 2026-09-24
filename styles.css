@@ -300,7 +300,7 @@ details[open] summary i { transform: rotate(45deg); }
   .mobile-plan-summary .plan-button { min-width: 176px; }
 
   .mobile-plan-panel { padding: 26px 16px 0; }
-  .mobile-plan-panel h3 { margin-bottom: 22px; color: var(--white); font-size: 26px; font-weight: 700; line-height: 1.2; }
+  .mobile-plan-panel h3 { margin-bottom: 22px; color: var(--white); font-family: "Inter", Arial, sans-serif; font-size: 20px; font-weight: 700; line-height: 1.2; }
   .mobile-feature-list { margin: 0; padding: 0; list-style: none; }
   .mobile-feature-list li {
     display: grid;
@@ -313,7 +313,7 @@ details[open] summary i { transform: rotate(45deg); }
   }
 
   .mobile-feature-list li:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
-  .mobile-feature-list span { color: var(--white); font-size: 18px; font-weight: 500; line-height: 1.35; }
+  .mobile-feature-list span { color: var(--white); font-size: 16px; font-weight: 500; line-height: 1.35; }
   .mobile-feature-list i { justify-self: center; font-size: 22px; font-weight: 500; }
   .mobile-feature-list i { color: #bfc0c5; }
   .mobile-feature-list-plus i { color: var(--gold); }
