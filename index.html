@@ -27,7 +27,7 @@
       type="image/svg+xml"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23080808'/%3E%3Cpath d='M33 13 19 35h11l-2 16 17-25H34l-1-13Z' fill='%23EFBF04'/%3E%3C/svg%3E"
     />
-    <link rel="stylesheet" href="styles.css?v=20260924-15" />
+    <link rel="stylesheet" href="styles.css?v=20260924-20" />
   </head>
   <body>
     <main>
@@ -201,6 +201,12 @@
         </div>
       </section>
     </main>
+    <aside class="floating-offer" id="floating-offer" aria-label="Penawaran Kompas.com PLUS MAX" aria-hidden="true" inert>
+      <div class="floating-offer-content">
+        <p class="floating-offer-copy"><span class="floating-offer-intro">Gabung <strong>Kompas.com+ MAX</strong></span><span class="floating-offer-price"><s>Rp33.000</s> <b>Rp16.500/bulan</b></span></p>
+        <a class="floating-offer-button" href="https://www.kompas.com/plus" target="_blank" rel="noreferrer">Gabung</a>
+      </div>
+    </aside>
     <script>
       (() => {
         const root = document.querySelector('.mobile-comparison');
@@ -221,6 +227,36 @@
             updatePlan();
           });
         });
+      })();
+
+      (() => {
+        const floatingOffer = document.querySelector('#floating-offer');
+        const testimonials = document.querySelector('#testimoni');
+        if (!floatingOffer || !testimonials) return;
+
+        let isTicking = false;
+        const updateFloatingOffer = () => {
+          const hasPassedTestimonials = testimonials.getBoundingClientRect().bottom <= window.innerHeight * 0.15;
+          floatingOffer.classList.toggle('is-visible', hasPassedTestimonials);
+          floatingOffer.setAttribute('aria-hidden', String(!hasPassedTestimonials));
+          floatingOffer.toggleAttribute('inert', !hasPassedTestimonials);
+        };
+        const requestUpdate = () => {
+          if (isTicking) return;
+          isTicking = true;
+          window.requestAnimationFrame(() => {
+            updateFloatingOffer();
+            isTicking = false;
+          });
+        };
+
+        window.addEventListener('scroll', requestUpdate, { passive: true });
+        window.addEventListener('scrollend', requestUpdate);
+        window.addEventListener('resize', requestUpdate);
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(updateFloatingOffer, { threshold: 0 }).observe(testimonials);
+        }
+        updateFloatingOffer();
       })();
 
     </script>
