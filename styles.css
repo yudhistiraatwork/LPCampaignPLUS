@@ -407,7 +407,7 @@ details[open] summary i { transform: rotate(45deg); }
   .hero-layout .hero-logo { width: auto; height: 18px; margin-left: 0; margin-right: 0; margin-bottom: 26px; }
   .hero-layout .hero-visual { grid-column: 2; width: 100%; max-width: 660px; margin: 0; }
   .hero-layout .offer { max-width: none; margin: 0; padding: 0; text-align: left; }
-  .hero-layout .offer > p:first-child { margin-bottom: 6px; font-size: 18px; }
+  .hero-layout .offer > p:first-child { margin-bottom: 16px; font-size: 18px; }
   .hero-layout .price-line { justify-content: start; justify-items: start; }
   .hero-layout .price-line strong { font-size: 36px; }
   .hero-layout .daily-price { margin-top: 8px; margin-bottom: 18px; }
